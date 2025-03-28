@@ -1,0 +1,20 @@
+# Função para abrir e ler o arquivo com tratamento de exceção
+def abertura_segura_arquivo():
+    try:
+        # Solicitar o nome do arquivo
+        nome_arquivo = input("Digite o nome do arquivo para leitura: ")
+        
+        # Tentar abrir o arquivo
+        with open(nome_arquivo, 'r') as arquivo:
+            conteudo = arquivo.read()
+            print("\nConteúdo do arquivo:")
+            print(conteudo)
+    
+    except FileNotFoundError:
+        print("Erro: O arquivo não foi encontrado.")
+    except IOError:
+        print("Erro: Ocorreu um erro de leitura no arquivo.")
+    except Exception as e:
+        print(f"Erro inesperado: {e}")
+
+abertura_segura_arquivo()
