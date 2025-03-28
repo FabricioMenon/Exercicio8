@@ -1,0 +1,13 @@
+# Função que solicita um número e exibe o dobro com tratamento de exceção
+def conversao_entrada_com_excecoes():
+    while True:
+        try:
+            # Solicitar um número inteiro
+            numero = int(input("Digite um número inteiro: "))
+            # Exibir o dobro do número
+            print(f"O dobro de {numero} é {numero * 2}")
+            break  # Sair do loop se a entrada for válida
+        except ValueError:
+            print("Erro: Entrada inválida. Por favor, digite um número inteiro válido.")
+
+conversao_entrada_com_excecoes()
