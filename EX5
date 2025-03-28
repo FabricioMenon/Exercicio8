@@ -1,0 +1,28 @@
+# Exceção personalizada para saldo insuficiente
+class SaldoInsuficiente(Exception):
+    pass
+
+# Função para simular o sistema bancário
+def operacoes_bancarias():
+    saldo = 1000.00  # Saldo inicial
+    
+    try:
+        # Solicitar o valor para saque
+        saque = float(input("Digite o valor que deseja sacar: "))
+        
+        # Verificar se o valor do saque é maior que o saldo
+        if saque > saldo:
+            raise SaldoInsuficiente("Erro: Saldo insuficiente para realizar o saque.")
+        
+        # Realizar o saque
+        saldo -= saque
+        print(f"Saque realizado com sucesso. Saldo restante: R${saldo:.2f}")
+    
+    except SaldoInsuficiente as e:
+        print(e)
+    except ValueError:
+        print("Erro: Valor inválido. Por favor, digite um valor numérico.")
+    except Exception as e:
+        print(f"Erro inesperado: {e}")
+
+operacoes_bancarias()
