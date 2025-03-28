@@ -1,0 +1,19 @@
+# Função que realiza a divisão com tratamento de exceção
+def divisao_segura():
+    try:
+        # Solicitar os dois números
+        num1 = float(input("Digite o primeiro número: "))
+        num2 = float(input("Digite o segundo número: "))
+        
+        # Realizar a divisão
+        resultado = num1 / num2
+        print(f"O resultado da divisão é: {resultado}")
+    
+    except ZeroDivisionError:
+        print("Erro: Não é possível dividir por zero.")
+    except ValueError:
+        print("Erro: Entrada inválida. Por favor, digite números válidos.")
+    except Exception as e:
+        print(f"Erro inesperado: {e}")
+
+divisao_segura()
